@@ -6,5 +6,6 @@ __Memoria descriptiva:__ La idea consta de controlar el encendido y apagado de l
 Ambos semáforos comenzarán en rojo para evitar cualquier tipo de accidente, *S1 = R ; S2 = R ;* al transcurrir *tiempo_seguridad* el semáforo 1 estará en color verde mientras que el segundo quedará en rojo por la duración de *tiempo_1*, luego ambos cambiarán a color amarillo *S1 = A ; S2 = A;* durante *tiempo_2* para posteriormente ponerse primero el semáforo 1 en rojo, y luego de *tiempo_seguridad* el semáforo 2 en verde (*S2 = V ; S1 = R ;)* durante lo que dure el *tiempo_3*. Una vez concluído, ambos semáforos pasarán al color amarillo (*S1 = A; S2 = A;*) durante *tiempo_2* hasta que el semáforo 2 vuelva a rojo y se esperará nuevamente *tiempo_seguridad* para colocar en verde el semaforo 1 y continuar con el ciclo.
 
 __Máquina de estado__:
+
 ![Máquina de Estado - TP1](https://user-images.githubusercontent.com/82192142/132864300-b7de2a2d-75b6-4bf2-aaa9-c9f73f639d37.png)
 
