@@ -21,18 +21,18 @@ así por el momento para consultar en clase.
 typedef struct{
 	
 	//definir tiempos del semáforo 1
-	int verde;
-	int amarillo;
-	int rojo; 
+	unsigned int verde;
+	unsigned int amarillo;
+	unsigned int rojo; 
 	
 }tiempos_sem1;
 
 typedef struct{
 	
 	//definir tiempos del semáforo 2
-	int verde;
-	int amarillo;
-	int rojo;
+	unsigned int verde;
+	unsigned int amarillo;
+	unsigned int rojo;
 	
 }tiempos_sem2;
 
@@ -50,7 +50,7 @@ typedef struct{
 
 
 //Tiempo de seguridad
-int t_seguridad;
+unsigned int t_seguridad;
 
 
 #endif
