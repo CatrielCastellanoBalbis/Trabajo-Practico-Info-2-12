@@ -7,5 +7,4 @@ Ambos semáforos comenzarán en rojo para evitar cualquier tipo de accidente, (*
 
 __Máquina de estado__:
 
-![Máquina de Estado - TP1]![image](https://user-images.githubusercontent.com/82192142/141988567-6953572a-6ceb-4d64-9b18-6933f1221f1e.png)
-
+![image](https://user-images.githubusercontent.com/82192142/141988992-31e3533e-07df-44a0-b8eb-a55f08701522.png)
