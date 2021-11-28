@@ -1,77 +1,34 @@
 #ifndef lib
 #define lib
 
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 #include <windows.h>
-#include "tiempos.h"
 
-void verde1(int t){
-	printf("Semáforo 1 en verde encendido por %d segundos. \n", t/1000);
-	Sleep(t);
-	
-	int sem1v = 1;
-    int sem1a = 0;
-    int sem1r = 0;
-    int sem2v = 0;
-    int sem2a = 0;
-    int sem2r = 1;
 
-	
+struct var{
+unsigned int tiempo_seguridad;
+unsigned int tiempo_1V;
+unsigned int tiempo_2V;
+unsigned int tiempo_A;
 };
 
-void amarillo1(int t){
-	printf("Semáforo 1  en amarillo encendido por %d segundos. \n", t/1000);
-	Sleep(t);
-	
-	int sem1v = 0;
-    int sem1a = 1;
-    int sem1r = 0;
-    int sem2v = 0;
-    int sem2a = 0;
-    int sem2r = 1;
+struct var datos;
 
-	
-};
+int verde1(int t);
+int verde2(int t);
+int amarillo1(int t);
+int rojo_seg(int t);
 
-void rojo_seg(int t){
-	printf("Ambos en rojo por %d segundos. \n", t/1000);
-	Sleep(t);
-	
-	int sem1v = 0;
-    int sem1a = 0;
-    int sem1r = 1;
-    int sem2v = 0;
-    int sem2a = 0;
-    int sem2r = 1;
+int sem1v;
+int sem1a;
+int sem1r;
+int sem2v;
+int sem2a;
+int sem2r;
 
-	
-};
-
-void verde2(int t){
-	printf("Semáforo 2 en verde encendido por %d segundos. \n", t/1000);
-	Sleep(t);
-	
-	int sem1v = 0;
-    int sem1a = 0;
-    int sem1r = 1;
-    int sem2v = 1;
-    int sem2a = 0;
-    int sem2r = 0;
-
-	
-};
-
-void amarillo2(int t){
-	printf("Semáforo 2  en amarillo encendido por %d segundos. \n", t/1000);
-	Sleep(t);
-	
-	int sem1v = 0;
-    int sem1a = 1;
-    int sem1r = 0;
-    int sem2v = 0;
-    int sem2a = 0;
-    int sem2r = 1;
-
-	
-};
+int retorno=1;
+int mem=0;
 
 #endif
