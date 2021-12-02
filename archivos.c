@@ -1,62 +1,88 @@
 #include "lib.h"
 
-int main(){
-
 int verde1(int t){
-	int cont;
+	
+        int *ret = &retorno;
+        int *conta = &cont;	
+        struct salidas semaforo;
+        struct salidas *punt = &semaforo;
+	
+
 	system("cls");
-	printf("Semáforo 1 en verde encendido por %d segundos. \n", t);
+	printf("SemÃ¡foro 1 en verde encendido por %d segundos. \n", t);
 	Sleep(1);
-	cont++;
+	(*conta)++;
+	//printf("cont: %d\n", cont);
 	if(cont < (datos.tiempo_1V * 1000)){
-		retorno = 1;
+		*ret = 3;
 	} else {
-		retorno = 2;
+		*ret = 2;
 		cont = 0;
 	};
 	
-	int sem1v = 1;
-    int sem1a = 0;
-    int sem1r = 0;
-    int sem2v = 0;
-    int sem2a = 0;
-    int sem2r = 1;
+	punt->sem1v = 1;
+        punt->sem1a = 0;
+        punt->sem1r = 0;
+        punt->sem2v = 0;
+        punt->sem2a = 0;
+        punt->sem2r = 1;
     
 	return retorno;
 };
 
 int amarillo1(int t){
-	int cont;
-	system("cls");
-	printf("Semáforo 1  en amarillo encendido por %d segundos. \n", t);
-	Sleep(1);
-	cont++;
-    
-    if(cont < (datos.tiempo_A * 1000)){
-    	retorno = 2;
-	} else {
-	cont=0;
-    if(mem == 0){
-    	retorno = 3; //Enciende el verde2
-    	mem = 1;
-	} else if (mem == 1){
-		retorno = 1; //Enciende el rojo
-		mem = 2;
-	} else if (mem == 2){
-		retorno = 4; //Enciende el verde2
-		mem = 3;
-	} else if (mem == 3){
-		retorno = 1; //Enciende el verde1
-		mem = 0;
-	}
-	};
+
+        int *conta = &cont;	
+        int *memo = &mem;	
+        int *ret = &retorno;
+        struct salidas semaforo;
+        struct salidas *punt = &semaforo;	
 	
-	int sem1v = 0;
-    int sem1a = 1;
-    int sem1r = 0;
-    int sem2v = 0;
-    int sem2a = 0;
-    int sem2r = 1;
+	system("cls");
+	printf("SemÃ¡foro 1  en amarillo encendido por %d segundos. \n", t);
+	Sleep(1);
+	(*conta)++;
+	//printf("cont: %d\n", cont);
+    if(cont < (datos.tiempo_A * 1000)){
+    	*ret = 2;
+	} else {
+	*conta=0;
+	
+	switch(mem){
+		
+		case 0: 
+		         *ret = 3;
+		         *memo = 1;
+		         break;
+		
+		case 1: 
+		        *ret = 1;
+		        *memo = 2;
+		        break;
+		
+		case 2:
+			*ret = 4;
+		        *memo = 3;
+			break;
+				
+		case 3:
+		        *ret = 1;
+			*memo = 0;
+			break;
+				
+		default: 
+		        printf("Error\n");
+			break; 
+		
+	            };
+        };
+
+	punt->sem1v = 0;
+	punt->sem1a = 1;
+	punt->sem1r = 0;
+        punt->sem2v = 0;
+        punt->sem2a = 0;
+        punt->sem2r = 1;
 
 	
 	return retorno;
@@ -64,24 +90,30 @@ int amarillo1(int t){
 };
 
 int rojo_seg(int t){
-	int cont;
+
+        int *conta = &cont;		
+        int *ret = &retorno;
+        struct salidas semaforo;
+        struct salidas *punt = &semaforo;
+
 	system("cls");
-	printf("Semáforos en rojo por %d segundos.\n", t);
+	printf("SemÃ¡foros en rojo por %d segundos.\n", t);
 	Sleep(1);
-	cont++;
+	(*conta)++;
+	//printf("cont: %d\n", cont);
 	if(cont < (datos.tiempo_seguridad * 1000)){
-		retorno = 1;
+		*ret = 1;
 	} else {
-		retorno = 2;
-		cont = 0;
+		*ret = 2;
+		*conta = 0;
 	};
 	
-	int sem1v = 0;
-    int sem1a = 0;
-    int sem1r = 1;
-    int sem2v = 0;
-    int sem2a = 0;
-    int sem2r = 1;
+	punt->sem1v = 0;
+        punt->sem1a = 0;
+        punt->sem1r = 1;
+	punt->sem2v = 0;
+        punt->sem2a = 0;
+        punt->sem2r = 1;
 
 
 	return retorno;
@@ -89,26 +121,31 @@ int rojo_seg(int t){
 };
 
 int verde2(int t){
-	int cont;
-	system("cls");
-	printf("Semáforo 2 en verde encendido por %d segundos. \n", t);
-	Sleep(1);
-	cont++;
-	if (cont < (datos.tiempo_2V * 1000)){
-		retorno = 4;
-	} else {
-		retorno = 2;
-		cont = 0;
-	}
 	
-	int sem1v = 0;
-    int sem1a = 0;
-    int sem1r = 1;
-    int sem2v = 1;
-    int sem2a = 0;
-    int sem2r = 0;
+        int *conta = &cont;		
+        int *ret = &retorno;
+        struct salidas semaforo;
+        struct salidas *punt = &semaforo;
+
+
+	system("cls");
+	printf("SemÃ¡foro 2 en verde encendido por %d segundos. \n", t);
+	Sleep(1);
+        (*conta)++;
+	//printf("cont: %d\n", cont);
+	if (cont < (datos.tiempo_2V * 1000)){
+		*ret = 4;
+	} else {
+		*ret = 2;
+		*conta = 0;
+	};
+	
+	punt->sem1v = 0;
+        punt->sem1a = 0;
+        punt->sem1r = 1;
+        punt->sem2v = 1;
+	punt->sem2a = 0;
+        punt->sem2r = 0;
 
 	return retorno;
-};
-
 };
