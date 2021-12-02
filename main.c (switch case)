@@ -9,38 +9,39 @@ int main(){
 	
 	semaforo = &rojo_seg;
 	(*semaforo)(datos.tiempo_seguridad);
+	
 	        
 	while(1){
 		
 	 switch(retorno){
 	 	
-	 	case 1:
+	 	case ROJO:
 	 		
-	 	semaforo = &rojo_seg;
+	 		semaforo = &rojo_seg;
 	        (*semaforo)(datos.tiempo_seguridad);
 	        
 	        break;
 	        
-	    case 2:
+	    case AMARILLO:
 	    	
 	    	semaforo = &amarillo1;
 	        (*semaforo)(datos.tiempo_A);
 	        
 	        break;
 	       
-	    case 3:
+	    case VERDE1:
 	 		
-	 	semaforo = &verde1;
+	 		semaforo = &verde1;
 	        (*semaforo)(datos.tiempo_1V);
 
 	        break;
 	        
-	    case 4:
+	    case VERDE2:
 	    	
 	    	semaforo = &verde2;
 	        (*semaforo)(datos.tiempo_2V);
 			
-		break;
+			break;
 	 	
 	 };
 	 
