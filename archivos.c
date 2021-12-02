@@ -14,9 +14,9 @@ int verde1(int t){
 	(*conta)++;
 	//printf("cont: %d\n", cont);
 	if(cont < (datos.tiempo_1V * 1000)){
-		*ret = 3;
+		*ret = VERDE1;
 	} else {
-		*ret = 2;
+		*ret = AMARILLO;
 		cont = 0;
 	};
 	
@@ -44,29 +44,29 @@ int amarillo1(int t){
 	(*conta)++;
 	//printf("cont: %d\n", cont);
     if(cont < (datos.tiempo_A * 1000)){
-    	*ret = 2;
+    	*ret = AMARILLO;
 	} else {
 	*conta=0;
 	
 	switch(mem){
 		
 		case 0: 
-		         *ret = 3;
+		         *ret = VERDE1;
 		         *memo = 1;
 		         break;
 		
 		case 1: 
-		        *ret = 1;
+		        *ret = ROJO;
 		        *memo = 2;
 		        break;
 		
 		case 2:
-			*ret = 4;
+			*ret = VERDE2;
 		        *memo = 3;
 			break;
 				
 		case 3:
-		        *ret = 1;
+		        *ret = ROJO;
 			*memo = 0;
 			break;
 				
@@ -102,9 +102,9 @@ int rojo_seg(int t){
 	(*conta)++;
 	//printf("cont: %d\n", cont);
 	if(cont < (datos.tiempo_seguridad * 1000)){
-		*ret = 1;
+		*ret = ROJO;
 	} else {
-		*ret = 2;
+		*ret = AMARILLO;
 		*conta = 0;
 	};
 	
@@ -134,9 +134,9 @@ int verde2(int t){
         (*conta)++;
 	//printf("cont: %d\n", cont);
 	if (cont < (datos.tiempo_2V * 1000)){
-		*ret = 4;
+		*ret = VERDE2;
 	} else {
-		*ret = 2;
+		*ret = AMARILLO;
 		*conta = 0;
 	};
 	
