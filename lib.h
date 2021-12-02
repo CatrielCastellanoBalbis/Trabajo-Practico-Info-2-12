@@ -31,9 +31,9 @@ struct salidas{
    int sem2r;
 };
 
-struct otros{
 int retorno;
-};
+int cont;
+int mem;
 
 
 #endif
