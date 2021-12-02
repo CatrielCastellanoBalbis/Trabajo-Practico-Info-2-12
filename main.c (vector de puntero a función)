@@ -1,0 +1,22 @@
+#include "lib.h"
+
+
+int main(){
+
+	leer();
+	int (*semaforo[4])(int) = {&rojo_seg, &amarillo1, &verde1, &verde2};
+	int tiempo[4] = {datos.tiempo_seguridad, datos.tiempo_A, datos.tiempo_1V, datos.tiempo_2V};
+	int *conta = &cont;
+	*conta = 0;
+	
+	(*semaforo[0])(datos.tiempo_seguridad);
+	        
+	while(1){
+		
+		semaforo[retorno-1](tiempo[retorno-1]);
+	  
+    };
+    
+    return 0;
+    
+}
