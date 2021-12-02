@@ -1,36 +1,46 @@
 #include "lib.h"
 
 int main(){
-	
+
+	leer();
 	int (*semaforo)(int);
+	int *conta = &cont;
+	*conta = 0;
 	
+	semaforo = &rojo_seg;
+	(*semaforo)(datos.tiempo_seguridad);
+	        
 	while(1){
 		
 	 switch(retorno){
 	 	
 	 	case 1:
 	 		
-	 		semaforo = &rojo_seg;
-	                (*semaforo)(datos.tiempo_seguridad);
-	                break;
+	 	semaforo = &rojo_seg;
+	        (*semaforo)(datos.tiempo_seguridad);
 	        
-	         case 2:
+	        break;
+	        
+	    case 2:
 	    	
-	    	        semaforo = &amarillo1;
-	                (*semaforo)(datos.tiempo_A);
-	                break;
+	    	semaforo = &amarillo1;
+	        (*semaforo)(datos.tiempo_A);
+	        
+	        break;
 	       
-	         case 3:
+	    case 3:
 	 		
-	 		semaforo = &verde1;
-	                (*semaforo)(datos.tiempo_1V);
-	                break;
+	 	semaforo = &verde1;
+	        (*semaforo)(datos.tiempo_1V);
+
+	        break;
 	        
-	         case 4:
+	    case 4:
 	    	
-	    	        semaforo = &verde2;
-	                (*semaforo)(datos.tiempo_2V);
-	                break;
+	    	semaforo = &verde2;
+	        (*semaforo)(datos.tiempo_2V);
+			
+		break;
 	 	
 	 };
 	 
