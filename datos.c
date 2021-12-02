@@ -1,7 +1,5 @@
 #include "lib.h"
 
-int main(){
-	
 	FILE *archivo;
 	struct var config = {1, 30, 25, 5};
 	//Colocar el tiempo en segundos.
@@ -25,5 +23,4 @@ int main(){
 	/**	
 	printf("%d\n%d\n%d\n%d\n", datos.tiempo_1V, datos.tiempo_2V,datos.tiempo_A,datos.tiempo_seguridad);
 	*/
-	
-}
+
