@@ -6,6 +6,11 @@
 #include <stdlib.h>
 #include <windows.h>
 
+#define ROJO 1
+#define AMARILLO 2
+#define VERDE1 3
+#define VERDE2 4
+
 
 struct var{
 unsigned int tiempo_seguridad;
