@@ -33,7 +33,6 @@ struct salidas{
 
 struct otros{
 int retorno;
-int mem;
 };
 
 
